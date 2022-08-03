@@ -1,10 +1,33 @@
-import Circle from "./Circle";
+import React, { useState } from "react";
+import styled from "styled-components";
+import { isPropertySignature } from "typescript";
+
+const Button = styled.button`
+	background: ${(props) => props.theme.btnColor};
+	color: ${(props) => props.theme.textColor};
+`;
 
 function App() {
+	const [value, setValue] = useState("");
+
+	const onChange = (event: React.FormEvent<HTMLInputElement>) => {
+		const {
+			currentTarget: { value },
+		} = event;
+		setValue(value);
+	};
+
+	const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+		event.preventDefault();
+		console.log(value);
+	};
+
 	return (
 		<div>
-			<Circle bgColor={"teal"} borderColor={"lightpink"} text="abcd" />
-			<Circle bgColor={"tomato"} />
+			<form onSubmit={onSubmit}>
+				<input value={value} onChange={onChange} type="text" />
+				<Button>Log in</Button>
+			</form>
 		</div>
 	);
 }
