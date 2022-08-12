@@ -7,7 +7,7 @@ import Chart from "./routes/Chart";
 function BrowserRouter() {
 	// "/:coinId/*"가 되면 뒤에 뭐가 들어와도 뭔가 보여주려고 함
 	return (
-		<Router>
+		<Router basename={process.env.PUBLIC_URL}>
 			<Routes>
 				<Route path="/" element={<Coins />} />
 				<Route path="/:coinId" element={<Coin />}>
