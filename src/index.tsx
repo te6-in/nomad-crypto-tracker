@@ -1,18 +1,19 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
-import "./index.css";
-import { ThemeProvider } from "styled-components";
-import { darkTheme, lightTheme } from "./theme";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { RecoilRoot } from "recoil";
 
-const root = ReactDOM.createRoot(
-	document.getElementById("root") as HTMLElement
-);
+const queryClient = new QueryClient();
 
-root.render(
+const root = document.getElementById("root") as HTMLElement;
+
+ReactDOM.createRoot(root).render(
 	<React.StrictMode>
-		<ThemeProvider theme={darkTheme}>
-			<App />
-		</ThemeProvider>
+		<RecoilRoot>
+			<QueryClientProvider client={queryClient}>
+				<App />
+			</QueryClientProvider>
+		</RecoilRoot>{" "}
 	</React.StrictMode>
 );
