@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/nomad-crypto-tracker/static/js/main.dfef4638.js",
+    "main.js": "/nomad-crypto-tracker/static/js/main.b889bbf8.js",
     "index.html": "/nomad-crypto-tracker/index.html",
-    "main.dfef4638.js.map": "/nomad-crypto-tracker/static/js/main.dfef4638.js.map"
+    "main.b889bbf8.js.map": "/nomad-crypto-tracker/static/js/main.b889bbf8.js.map"
   },
   "entrypoints": [
-    "static/js/main.dfef4638.js"
+    "static/js/main.b889bbf8.js"
   ]
 }
